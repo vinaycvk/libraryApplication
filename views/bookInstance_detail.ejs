@@ -1,0 +1,14 @@
+
+<%- include('header') %>
+
+<div>
+    <h1>ID: <%= bookInstances.id %></h1>
+    <h3>Title: <a href="<%= bookInstances.book.url %>"><%= bookInstances.book.title %></a></h3>
+    <h3>Imprint: <a href="<%= bookInstances.book.url %>"><%= bookInstances.imprint %></a></h3>
+    <h3>status: <a href="<%= bookInstances.book.url %>"><%= bookInstances.status %></a></h3>
+    <h3>Due Back: <a href="<%= bookInstances.book.url %>"><%= bookInstances.due_back_formatted %></a></h3>
+    <div>
+        <p><a href="<%= bookInstances.url + '/delete' %>">Delete</a></p>
+        <p><a href="<%= bookInstances.url + '/update' %>">Update</a></p>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<%- include('header') %>
+<div class="col-sm-10">
+
+    <h1><%= genre.name %></h1>
+
+    <div style='margin-top:20px'>
+
+        <h4>Books</h4>
+    
+        <dl>
+          <% if (genre_books.length > 0) { %>
+            <% genre_books.forEach((book) => { %>
+              <dt>
+                <a href="<%= book.url %>"><%= book.title %></a>
+              </dt>
+              <dd><%= book.summary %></dd>
+            <% }); %>
+          <% } else { %>
+            <p>This genre has no books</p>
+          <% } %>
+        </dl>
+    </div>
+    <div>
+       <p><a href="<%= genre.url + '/delete' %>">Delete</a></p>
+       <p><a href="<%= genre.url + '/update' %>">Update</a></p>
+    </div>
+</div>
+
+<%- include('footer') %>

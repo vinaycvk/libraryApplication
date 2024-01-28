@@ -1,0 +1,33 @@
+<%- include('header') %>
+
+<div class="col-sm-10">
+
+    <h1>Author:<%= author.name %></h1>
+    <span><%=author.date_of_birth_formatted %></span>
+    <span><%=author.date_of_death_formatted %></span>
+
+    <div>
+        <h3>Books</h3>
+
+
+        <% if (book.length > 0) { %>
+            <% book.forEach((each) => { %>
+                <ul>
+                    <li>
+                        <a href="<%=each.url %>"><%= each.title %></a>
+                        <p><%= each.summary%></p>
+                    </li>
+                </ul>
+           <% }) %>
+        <% } else { %>
+             <h3>There are no books for this author</h3>
+        <%  }%>
+    </div>
+    <div>
+        <hr/>
+        <p><a href="<%= author.url + '/delete'%>" >Delete Author</a></p>
+        <p><a href="<%= author.url + '/update'%>" >Update Author</a></p>
+    </div>
+</div>
+
+<%- include('footer') %>

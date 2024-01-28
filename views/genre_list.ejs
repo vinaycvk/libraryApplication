@@ -1,0 +1,10 @@
+
+<%- include('header') %>
+
+<div>
+    <% genre_list.forEach((each)=> { %>
+        <li> <a href="<%= each.url %>" class=""> <%= each.name %></a></li>
+    <% }) %>
+</div>
+
+<%- include('footer') %>

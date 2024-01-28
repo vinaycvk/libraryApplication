@@ -1,0 +1,44 @@
+<%- include('header') %>
+
+
+<div>
+    <h1><%= title %></h1>
+
+    <form method="POST">
+    <div class="form-group">
+            <label for="book">Book:</label>
+            <select class="form-control" name="book" required>
+                <% books.forEach((book) => { %>
+                    <option value="<%= book.id %>">
+                        <%= book.title %>
+                    </option>
+                <% }) %>
+            </select>
+    </div>
+    <div class="form-group">
+            <label for="imprint">
+                Imprint:
+            </label>
+            <input type="text" name="imprint" required class="form-control" placeholder="imprint">
+
+    </div>
+    <div class="form-group">
+        <label for="due_back">Date when book available</label>
+        <input type="date" name="due_back" required class="form-control" placeholder="12/3/2016">
+    </div>
+    <div class="form-group">
+            <label for="status">Status:</label>
+            <select name="status" class="form-control">
+                <option value=''>--Please select a status--</option>
+                <% ['Maintenance', 'Available', 'Loaned', 'Reserved'].forEach(function(val) { %>
+                  <% if (typeof bookinstance === 'undefined' || bookinstance.status !== val) { %>
+                    <option value="<%= val %>"><%= val %></option>
+                  <% } else { %>
+                    <option value="<%= val %>" selected><%= val %></option>
+                  <% } %>
+                <% }); %>
+            </select>   
+    </div>
+    <button type="submit" class="btn btn-primary"> Submit</button>
+    </form>
+</div>
