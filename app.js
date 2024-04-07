@@ -45,7 +45,7 @@ mongoose.set("strictQuery", false);
 
 
 const dev_db_url =
-"mongodb+srv://cooluser:coolpassword@cluster0.o1dpxd4.mongodb.net/local_library?retryWrites=true&w=majority";
+"mongodb+srv://vinaycvk:vinaykumar1995@cluster0.o1dpxd4.mongodb.net/local_library?retryWrites=true&w=majority";
 
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
